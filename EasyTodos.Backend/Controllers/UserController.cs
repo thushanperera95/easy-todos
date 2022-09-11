@@ -10,9 +10,9 @@ namespace backend.Controllers;
 public class UserController : ControllerBase
 {
     private readonly ILogger<UserController> _logger;
-    private readonly UserContext _db;
+    private readonly DatabaseContext _db;
 
-    public UserController(ILogger<UserController> logger, UserContext db)
+    public UserController(ILogger<UserController> logger, DatabaseContext db)
     {
         _logger = logger;
         _db = db;

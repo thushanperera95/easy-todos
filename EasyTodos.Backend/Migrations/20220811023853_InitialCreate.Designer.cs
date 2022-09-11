@@ -10,7 +10,7 @@ using backend.Database.Contexts;
 
 namespace backend.Migrations
 {
-    [DbContext(typeof(UserContext))]
+    [DbContext(typeof(DatabaseContext))]
     [Migration("20220811023853_InitialCreate")]
     partial class InitialCreate
     {

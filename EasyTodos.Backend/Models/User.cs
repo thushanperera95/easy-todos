@@ -15,6 +15,5 @@ public class User
     public string Email { get; set; } = null!;
     
     [JsonIgnore]
-    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
     public DateTimeOffset CreatedAt { get; set; }
 }
