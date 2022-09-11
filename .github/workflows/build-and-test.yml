@@ -18,7 +18,7 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Build
         run: dotnet build --configuration Release
-        working-directory: backend
+        working-directory: EasyTodos.Backend
       - name: Test
         run: dotnet test --no-restore --verbosity normal
-        working-directory: backend
+        working-directory: EasyTodos.Backend
