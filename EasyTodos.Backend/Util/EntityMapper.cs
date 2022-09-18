@@ -15,4 +15,13 @@ public static class EntityMapper
             Hash = BCrypt.Net.BCrypt.HashPassword(newUser.Password)
         };
     } 
+    
+    public static Todo Map(NewTodo newTodo)
+    {
+        return new Todo
+        {
+            Description   = newTodo.Description,
+            CreateUser   = newTodo.CreateUser
+        };
+    } 
 }

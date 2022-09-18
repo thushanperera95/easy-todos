@@ -5,8 +5,8 @@ namespace backend.Database.Contexts;
 
 public class DatabaseContext : DbContext
 {
-    public virtual DbSet<User> Users { get; set; }
-    public virtual DbSet<Todo> Todos { get; set; }
+    public virtual DbSet<User> Users { get; set; } = null!;
+    public virtual DbSet<Todo> Todos { get; set; } = null!;
 
     public DatabaseContext()
     {
@@ -16,16 +16,22 @@ public class DatabaseContext : DbContext
     {
     }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    public override int SaveChanges()
     {
-        modelBuilder
-            .Entity<User>()
-                .Property(e => e.CreatedAt)
-                    .HasDefaultValue(DateTimeOffset.Now);
+        var entries = ChangeTracker
+            .Entries()
+            .Where(e => e.Entity is BaseEntity && e.State is EntityState.Added or EntityState.Modified);
         
-        modelBuilder
-            .Entity<Todo>()
-                .Property(e => e.CreatedAt)
-                    .HasDefaultValue(DateTimeOffset.Now);
+        foreach (var entityEntry in entries)
+        {
+            ((BaseEntity)entityEntry.Entity).UpdatedAt = DateTimeOffset.Now;
+
+            if (entityEntry.State == EntityState.Added)
+            {
+                ((BaseEntity)entityEntry.Entity).CreatedAt = DateTimeOffset.Now;
+            }
+        }
+        
+        return base.SaveChanges();
     }
 }

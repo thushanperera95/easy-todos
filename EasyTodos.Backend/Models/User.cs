@@ -1,9 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace backend.Models;
 
-public class User
+public class User : BaseEntity
 {
     public int Id { get; set; }
     public string Username { get; set; } = null!;
@@ -13,7 +12,4 @@ public class User
     public string FirstName { get; set; } = null!;
     public string LastName { get; set; } = null!;
     public string Email { get; set; } = null!;
-    
-    [JsonIgnore]
-    public DateTimeOffset CreatedAt { get; set; }
 }
