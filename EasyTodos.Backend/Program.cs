@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
-builder.Services.AddDbContext<UserContext>(options =>
+builder.Services.AddDbContext<DatabaseContext>(options =>
 #pragma warning disable CS8604
     options.UseNpgsql(builder.Configuration.GetConnectionString("DBConnection")));
 #pragma warning restore CS8604

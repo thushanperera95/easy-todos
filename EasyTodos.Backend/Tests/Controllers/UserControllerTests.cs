@@ -16,7 +16,7 @@ public class UserControllerTests
     {
         var mockSet = new Mock<DbSet<User>>();
 
-        var mockContext = new Mock<UserContext>();
+        var mockContext = new Mock<DatabaseContext>();
         mockContext.Setup(m => m.Users).Returns(mockSet.Object);
         
         var mockLogger = new Mock<ILogger<UserController>>();
@@ -55,7 +55,7 @@ public class UserControllerTests
         mockSet.As<IQueryable<User>>().Setup(m => m.ElementType).Returns(data.ElementType);
         mockSet.As<IQueryable<User>>().Setup(m => m.GetEnumerator()).Returns(() => data.GetEnumerator());
 
-        var mockContext = new Mock<UserContext>();
+        var mockContext = new Mock<DatabaseContext>();
         mockContext.Setup(m => m.Users).Returns(mockSet.Object);
         
         var mockLogger = new Mock<ILogger<UserController>>();
@@ -90,7 +90,7 @@ public class UserControllerTests
         mockSet.As<IQueryable<User>>().Setup(m => m.ElementType).Returns(data.ElementType);
         mockSet.As<IQueryable<User>>().Setup(m => m.GetEnumerator()).Returns(() => data.GetEnumerator());
 
-        var mockContext = new Mock<UserContext>();
+        var mockContext = new Mock<DatabaseContext>();
         mockContext.Setup(m => m.Users).Returns(mockSet.Object);
         
         var mockLogger = new Mock<ILogger<UserController>>();
@@ -123,7 +123,7 @@ public class UserControllerTests
         mockSet.As<IQueryable<User>>().Setup(m => m.ElementType).Returns(data.ElementType);
         mockSet.As<IQueryable<User>>().Setup(m => m.GetEnumerator()).Returns(() => data.GetEnumerator());
 
-        var mockContext = new Mock<UserContext>();
+        var mockContext = new Mock<DatabaseContext>();
         mockContext.Setup(m => m.Users).Returns(mockSet.Object);
         
         var mockLogger = new Mock<ILogger<UserController>>();

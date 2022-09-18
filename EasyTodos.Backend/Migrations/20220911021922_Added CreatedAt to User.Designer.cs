@@ -11,7 +11,7 @@ using backend.Database.Contexts;
 
 namespace backend.Migrations
 {
-    [DbContext(typeof(UserContext))]
+    [DbContext(typeof(DatabaseContext))]
     [Migration("20220911021922_Added CreatedAt to User")]
     partial class AddedCreatedAttoUser
     {
@@ -25,7 +25,7 @@ namespace backend.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("backend.Models.User", b =>
+            modelBuilder.Entity("EasyTodos.Backend.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
