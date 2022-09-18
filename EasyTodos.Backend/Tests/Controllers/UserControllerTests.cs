@@ -19,9 +19,9 @@ public class UserControllerTests
         var mockContext = new Mock<DatabaseContext>();
         mockContext.Setup(m => m.Users).Returns(mockSet.Object);
         
-        var mockLogger = new Mock<ILogger<UserController>>();
+        var mockLogger = new Mock<ILogger<UsersController>>();
 
-        var sut = new UserController(mockLogger.Object, mockContext.Object);
+        var sut = new UsersController(mockLogger.Object, mockContext.Object);
         var result = sut.CreateUser(new NewUser("TEST USERNAME", "TEST PASSWORD", "TEST FIRST", "TEST LAST", "TEST@TEST.COM"));
         var createdAtActionResult = result as CreatedAtActionResult;
         
@@ -58,9 +58,9 @@ public class UserControllerTests
         var mockContext = new Mock<DatabaseContext>();
         mockContext.Setup(m => m.Users).Returns(mockSet.Object);
         
-        var mockLogger = new Mock<ILogger<UserController>>();
+        var mockLogger = new Mock<ILogger<UsersController>>();
         
-        var sut = new UserController(mockLogger.Object, mockContext.Object);
+        var sut = new UsersController(mockLogger.Object, mockContext.Object);
         var okObjectResult = sut.Get() as OkObjectResult;
         
         Assert.IsNotNull(okObjectResult);
@@ -93,9 +93,9 @@ public class UserControllerTests
         var mockContext = new Mock<DatabaseContext>();
         mockContext.Setup(m => m.Users).Returns(mockSet.Object);
         
-        var mockLogger = new Mock<ILogger<UserController>>();
+        var mockLogger = new Mock<ILogger<UsersController>>();
         
-        var sut = new UserController(mockLogger.Object, mockContext.Object);
+        var sut = new UsersController(mockLogger.Object, mockContext.Object);
         var okObjectResult = sut.GetById(2) as OkObjectResult;
         
         Assert.IsNotNull(okObjectResult);
@@ -126,9 +126,9 @@ public class UserControllerTests
         var mockContext = new Mock<DatabaseContext>();
         mockContext.Setup(m => m.Users).Returns(mockSet.Object);
         
-        var mockLogger = new Mock<ILogger<UserController>>();
+        var mockLogger = new Mock<ILogger<UsersController>>();
         
-        var sut = new UserController(mockLogger.Object, mockContext.Object);
+        var sut = new UsersController(mockLogger.Object, mockContext.Object);
         var notFoundObjectResult = sut.GetById(5) as NotFoundResult;
         
         Assert.IsNotNull(notFoundObjectResult);

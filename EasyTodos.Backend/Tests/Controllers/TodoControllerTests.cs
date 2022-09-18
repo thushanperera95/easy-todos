@@ -25,9 +25,9 @@ public class TodoControllerTests
         var mockContext = new Mock<DatabaseContext>();
         mockContext.Setup(m => m.Todos).Returns(mockSet.Object);
         
-        var mockLogger = new Mock<ILogger<TodoController>>();
+        var mockLogger = new Mock<ILogger<TodosController>>();
 
-        var sut = new TodoController(mockLogger.Object, mockContext.Object);
+        var sut = new TodosController(mockLogger.Object, mockContext.Object);
         var result = sut.CreateTodo(new NewTodo("TEST DESCRIPTION", _testUser));
         var createdAtActionResult = result as CreatedAtActionResult;
         
@@ -61,9 +61,9 @@ public class TodoControllerTests
         var mockContext = new Mock<DatabaseContext>();
         mockContext.Setup(m => m.Todos).Returns(mockSet.Object);
         
-        var mockLogger = new Mock<ILogger<TodoController>>();
+        var mockLogger = new Mock<ILogger<TodosController>>();
         
-        var sut = new TodoController(mockLogger.Object, mockContext.Object);
+        var sut = new TodosController(mockLogger.Object, mockContext.Object);
         var okObjectResult = sut.Get() as OkObjectResult;
         
         Assert.IsNotNull(okObjectResult);
@@ -96,9 +96,9 @@ public class TodoControllerTests
         var mockContext = new Mock<DatabaseContext>();
         mockContext.Setup(m => m.Todos).Returns(mockSet.Object);
         
-        var mockLogger = new Mock<ILogger<TodoController>>();
+        var mockLogger = new Mock<ILogger<TodosController>>();
         
-        var sut = new TodoController(mockLogger.Object, mockContext.Object);
+        var sut = new TodosController(mockLogger.Object, mockContext.Object);
         var okObjectResult = sut.GetById(2) as OkObjectResult;
         
         Assert.IsNotNull(okObjectResult);
@@ -129,9 +129,9 @@ public class TodoControllerTests
         var mockContext = new Mock<DatabaseContext>();
         mockContext.Setup(m => m.Todos).Returns(mockSet.Object);
         
-        var mockLogger = new Mock<ILogger<TodoController>>();
+        var mockLogger = new Mock<ILogger<TodosController>>();
         
-        var sut = new TodoController(mockLogger.Object, mockContext.Object);
+        var sut = new TodosController(mockLogger.Object, mockContext.Object);
         var notFoundObjectResult = sut.GetById(5) as NotFoundResult;
         
         Assert.IsNotNull(notFoundObjectResult);
@@ -157,9 +157,9 @@ public class TodoControllerTests
         var mockContext = new Mock<DatabaseContext>();
         mockContext.Setup(m => m.Todos).Returns(mockSet.Object);
         
-        var mockLogger = new Mock<ILogger<TodoController>>();
+        var mockLogger = new Mock<ILogger<TodosController>>();
         
-        var sut = new TodoController(mockLogger.Object, mockContext.Object);
+        var sut = new TodosController(mockLogger.Object, mockContext.Object);
         var result = sut.DeleteById(2) as OkResult;
         
         Assert.IsNotNull(result);
@@ -185,9 +185,9 @@ public class TodoControllerTests
         var mockContext = new Mock<DatabaseContext>();
         mockContext.Setup(m => m.Todos).Returns(mockSet.Object);
         
-        var mockLogger = new Mock<ILogger<TodoController>>();
+        var mockLogger = new Mock<ILogger<TodosController>>();
         
-        var sut = new TodoController(mockLogger.Object, mockContext.Object);
+        var sut = new TodosController(mockLogger.Object, mockContext.Object);
         var notFoundObjectResult = sut.DeleteById(5) as NotFoundResult;
         
         Assert.IsNotNull(notFoundObjectResult);

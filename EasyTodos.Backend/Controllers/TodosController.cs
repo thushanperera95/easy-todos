@@ -7,12 +7,12 @@ namespace backend.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class TodoController : ControllerBase
+public class TodosController : ControllerBase
 {
-    private readonly ILogger<TodoController> _logger;
+    private readonly ILogger<TodosController> _logger;
     private readonly DatabaseContext _db;
 
-    public TodoController(ILogger<TodoController> logger, DatabaseContext db)
+    public TodosController(ILogger<TodosController> logger, DatabaseContext db)
     {
         _logger = logger;
         _db = db;

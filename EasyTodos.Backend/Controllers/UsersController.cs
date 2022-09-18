@@ -7,12 +7,12 @@ namespace backend.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class UserController : ControllerBase
+public class UsersController : ControllerBase
 {
-    private readonly ILogger<UserController> _logger;
+    private readonly ILogger<UsersController> _logger;
     private readonly DatabaseContext _db;
 
-    public UserController(ILogger<UserController> logger, DatabaseContext db)
+    public UsersController(ILogger<UsersController> logger, DatabaseContext db)
     {
         _logger = logger;
         _db = db;
