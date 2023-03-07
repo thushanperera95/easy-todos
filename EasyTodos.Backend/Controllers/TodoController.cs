@@ -1,4 +1,4 @@
-﻿using backend.Database.Contexts;
+﻿using backend.Database;
 using backend.Models;
 using backend.Util;
 using Microsoft.AspNetCore.Mvc;
@@ -19,14 +19,14 @@ public class TodosController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult Get()
+    public IActionResult GetAll()
     {
         var todos = _db.Todos.ToList();
         return Ok(todos);
     }
 
     [HttpGet("{id:int}")]
-    public IActionResult GetById(int id)
+    public IActionResult Get(int id)
     {
         var todo = _db.Todos.FirstOrDefault(u => u.Id == id);
         if (todo == null)
@@ -38,7 +38,7 @@ public class TodosController : ControllerBase
     }
     
     [HttpDelete("{id:int}")]
-    public IActionResult DeleteById(int id)
+    public IActionResult Delete(int id)
     {
         var todo = _db.Todos.FirstOrDefault(u => u.Id == id);
         if (todo == null)
@@ -52,12 +52,12 @@ public class TodosController : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult CreateTodo([FromBody]NewTodo newTodo)
+    public IActionResult Create([FromBody]NewTodo newTodo)
     {
         var todo = EntityMapper.Map(newTodo);
         _db.Todos.Add(todo);
         _db.SaveChanges();
 
-        return CreatedAtAction(nameof(CreateTodo), new { id = todo.Id }, todo);
+        return CreatedAtAction(nameof(Create), new { id = todo.Id }, todo);
     }
 }

@@ -1,4 +1,4 @@
-using backend.Database.Contexts;
+using backend.Database;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,9 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddDbContext<DatabaseContext>(options =>
-#pragma warning disable CS8604
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DBConnection")));
-#pragma warning restore CS8604
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DBConnection") ?? string.Empty));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

@@ -1,5 +1,5 @@
 ﻿using backend.Controllers;
-using backend.Database.Contexts;
+using backend.Database;
 using backend.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +22,7 @@ public class UserControllerTests
         var mockLogger = new Mock<ILogger<UsersController>>();
 
         var sut = new UsersController(mockLogger.Object, mockContext.Object);
-        var result = sut.CreateUser(new NewUser("TEST USERNAME", "TEST PASSWORD", "TEST FIRST", "TEST LAST", "TEST@TEST.COM"));
+        var result = sut.Create(new NewUser("TEST USERNAME", "TEST PASSWORD", "TEST FIRST", "TEST LAST", "TEST@TEST.COM"));
         var createdAtActionResult = result as CreatedAtActionResult;
         
         Assert.IsNotNull(createdAtActionResult);
@@ -61,7 +61,7 @@ public class UserControllerTests
         var mockLogger = new Mock<ILogger<UsersController>>();
         
         var sut = new UsersController(mockLogger.Object, mockContext.Object);
-        var okObjectResult = sut.Get() as OkObjectResult;
+        var okObjectResult = sut.GetAll() as OkObjectResult;
         
         Assert.IsNotNull(okObjectResult);
         Assert.AreEqual(200, okObjectResult?.StatusCode);
@@ -96,7 +96,7 @@ public class UserControllerTests
         var mockLogger = new Mock<ILogger<UsersController>>();
         
         var sut = new UsersController(mockLogger.Object, mockContext.Object);
-        var okObjectResult = sut.GetById(2) as OkObjectResult;
+        var okObjectResult = sut.Get(2) as OkObjectResult;
         
         Assert.IsNotNull(okObjectResult);
         Assert.AreEqual(200, okObjectResult?.StatusCode);
@@ -129,7 +129,7 @@ public class UserControllerTests
         var mockLogger = new Mock<ILogger<UsersController>>();
         
         var sut = new UsersController(mockLogger.Object, mockContext.Object);
-        var notFoundObjectResult = sut.GetById(5) as NotFoundResult;
+        var notFoundObjectResult = sut.Get(5) as NotFoundResult;
         
         Assert.IsNotNull(notFoundObjectResult);
         Assert.AreEqual(404, notFoundObjectResult?.StatusCode);

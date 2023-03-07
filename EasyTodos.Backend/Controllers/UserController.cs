@@ -1,4 +1,4 @@
-﻿using backend.Database.Contexts;
+﻿using backend.Database;
 using backend.Models;
 using backend.Util;
 using Microsoft.AspNetCore.Mvc;
@@ -19,14 +19,14 @@ public class UsersController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult Get()
+    public IActionResult GetAll()
     {
         var users = _db.Users.ToList();
         return Ok(users);
     }
 
     [HttpGet("{id:int}")]
-    public IActionResult GetById(int id)
+    public IActionResult Get(int id)
     {
         var user = _db.Users.FirstOrDefault(u => u.Id == id);
         if (user == null)
@@ -38,12 +38,12 @@ public class UsersController : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult CreateUser([FromBody]NewUser newUser)
+    public IActionResult Create([FromBody]NewUser newUser)
     {
         var user = EntityMapper.Map(newUser);
         _db.Users.Add(user);
         _db.SaveChanges();
 
-        return CreatedAtAction(nameof(CreateUser), new { id = user.Id }, user);
+        return CreatedAtAction(nameof(Create), new { id = user.Id }, user);
     }
 }

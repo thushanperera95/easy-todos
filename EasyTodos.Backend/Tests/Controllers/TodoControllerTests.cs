@@ -1,5 +1,5 @@
 ﻿using backend.Controllers;
-using backend.Database.Contexts;
+using backend.Database;
 using backend.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -28,7 +28,7 @@ public class TodoControllerTests
         var mockLogger = new Mock<ILogger<TodosController>>();
 
         var sut = new TodosController(mockLogger.Object, mockContext.Object);
-        var result = sut.CreateTodo(new NewTodo("TEST DESCRIPTION", _testUser));
+        var result = sut.Create(new NewTodo("TEST DESCRIPTION", _testUser));
         var createdAtActionResult = result as CreatedAtActionResult;
         
         Assert.IsNotNull(createdAtActionResult);
@@ -64,7 +64,7 @@ public class TodoControllerTests
         var mockLogger = new Mock<ILogger<TodosController>>();
         
         var sut = new TodosController(mockLogger.Object, mockContext.Object);
-        var okObjectResult = sut.Get() as OkObjectResult;
+        var okObjectResult = sut.GetAll() as OkObjectResult;
         
         Assert.IsNotNull(okObjectResult);
         Assert.AreEqual(200, okObjectResult?.StatusCode);
@@ -99,7 +99,7 @@ public class TodoControllerTests
         var mockLogger = new Mock<ILogger<TodosController>>();
         
         var sut = new TodosController(mockLogger.Object, mockContext.Object);
-        var okObjectResult = sut.GetById(2) as OkObjectResult;
+        var okObjectResult = sut.Get(2) as OkObjectResult;
         
         Assert.IsNotNull(okObjectResult);
         Assert.AreEqual(200, okObjectResult?.StatusCode);
@@ -132,7 +132,7 @@ public class TodoControllerTests
         var mockLogger = new Mock<ILogger<TodosController>>();
         
         var sut = new TodosController(mockLogger.Object, mockContext.Object);
-        var notFoundObjectResult = sut.GetById(5) as NotFoundResult;
+        var notFoundObjectResult = sut.Get(5) as NotFoundResult;
         
         Assert.IsNotNull(notFoundObjectResult);
         Assert.AreEqual(404, notFoundObjectResult?.StatusCode);
@@ -160,7 +160,7 @@ public class TodoControllerTests
         var mockLogger = new Mock<ILogger<TodosController>>();
         
         var sut = new TodosController(mockLogger.Object, mockContext.Object);
-        var result = sut.DeleteById(2) as OkResult;
+        var result = sut.Delete(2) as OkResult;
         
         Assert.IsNotNull(result);
         Assert.AreEqual(200, result?.StatusCode);
@@ -188,7 +188,7 @@ public class TodoControllerTests
         var mockLogger = new Mock<ILogger<TodosController>>();
         
         var sut = new TodosController(mockLogger.Object, mockContext.Object);
-        var notFoundObjectResult = sut.DeleteById(5) as NotFoundResult;
+        var notFoundObjectResult = sut.Delete(5) as NotFoundResult;
         
         Assert.IsNotNull(notFoundObjectResult);
         Assert.AreEqual(404, notFoundObjectResult?.StatusCode);
