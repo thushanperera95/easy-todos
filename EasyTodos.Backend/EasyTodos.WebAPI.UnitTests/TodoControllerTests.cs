@@ -1,43 +1,47 @@
-﻿// using EasyTodos.Application.TodoItems.Commands.CreateTodoItem;
-// using EasyTodos.Domain.Entities;
-// using EasyTodos.Infrastructure;
-// using EasyTodos.WebAPI.Controllers;
-// using Microsoft.AspNetCore.Mvc;
-// using Microsoft.EntityFrameworkCore;
-// using Microsoft.Extensions.Logging;
-// using Moq;
-// using NUnit.Framework;
-//
-// namespace EasyTodos.WebAPI.Tests.Controllers;
-//
-// [TestFixture]
-// public class TodoControllerTests
-// {
-//     [Test]
-//     public void CreateTodo_ValidTodo()
-//     {
-//         var mockSet = new Mock<DbSet<TodoItem>>();
-//
-//         var mockContext = new Mock<DatabaseContext>();
-//         mockContext.Setup(m => m.TodoItems).Returns(mockSet.Object);
-//         
-//         var mockLogger = new Mock<ILogger<TodosController>>();
-//
-//         var sut = new TodosController(mockLogger.Object, mockContext.Object);
-//         var result = sut.Create(new CreateTodoItemCommand("TEST DESCRIPTION", "TEST USER"));
-//         var createdAtActionResult = result as CreatedAtActionResult;
-//         
-//         Assert.IsNotNull(createdAtActionResult);
-//         Assert.AreEqual(201, createdAtActionResult?.StatusCode);
-//
-//         var todo = createdAtActionResult?.Value as TodoItem;
-//         Assert.AreEqual("TEST DESCRIPTION", todo?.Description);
-//         Assert.AreEqual("TEST USER", todo?.CreatedBy);
-//         
-//         mockSet.Verify(m => m.Add(It.IsAny<TodoItem>()), Times.Once);
-//         mockContext.Verify(m => m.SaveChanges(), Times.Once);
-//     }
-//     
+﻿using EasyTodos.Application.TodoItems.Commands.CreateTodoItem;
+using EasyTodos.Domain.Entities;
+using EasyTodos.Infrastructure;
+using EasyTodos.WebAPI.Controllers;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Moq;
+using NUnit.Framework;
+
+namespace EasyTodos.WebAPI.Tests.Controllers;
+
+[TestFixture]
+public class TodoControllerTests
+{
+    [Test]
+    public void CreateTodo_ValidTodo()
+    {
+        var mockSet = new Mock<DbSet<TodoItem>>();
+
+        var mockContext = new Mock<DatabaseContext>();
+        mockContext.Setup(m => m.TodoItems).Returns(mockSet.Object);
+        
+        var mockLogger = new Mock<ILogger<TodosController>>();
+
+        var createCommand = new CreateTodoItemCommandHandler(mockContext);
+        var deleteCommand = new DeleteTodoItemCommandHandler(mockContext);
+        var getQuery = new GetTodoItemsByUsernameQuery(mockContext);
+
+        var sut = new TodosController(mockLogger.Object, createCommand, deleteCommand, getQuery);
+        var result = sut.Create(new CreateTodoItemCommand("TEST DESCRIPTION", "TEST USER"));
+        var createdAtActionResult = result as CreatedAtActionResult;
+        
+        Assert.IsNotNull(createdAtActionResult);
+        Assert.AreEqual(201, createdAtActionResult?.StatusCode);
+
+        var todo = createdAtActionResult?.Value as TodoItem;
+        Assert.AreEqual("TEST DESCRIPTION", todo?.Description);
+        Assert.AreEqual("TEST USER", todo?.CreatedBy);
+        
+        mockSet.Verify(m => m.Add(It.IsAny<TodoItem>()), Times.Once);
+        mockContext.Verify(m => m.SaveChanges(), Times.Once);
+    }
+    
 //     [Test]
 //     public void Get_ReturnsAllTodos()
 //     {
@@ -189,5 +193,5 @@
 //         Assert.IsNotNull(notFoundObjectResult);
 //         Assert.AreEqual(404, notFoundObjectResult?.StatusCode);
 //     }
-// }
+}
 
