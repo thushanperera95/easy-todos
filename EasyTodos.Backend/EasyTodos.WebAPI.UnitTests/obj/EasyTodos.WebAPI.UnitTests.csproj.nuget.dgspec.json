@@ -1,0 +1,394 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.WebAPI.UnitTests\\EasyTodos.WebAPI.UnitTests.csproj": {}
+  },
+  "projects": {
+    "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Application\\EasyTodos.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Application\\EasyTodos.Application.csproj",
+        "projectName": "EasyTodos.Application",
+        "projectPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Application\\EasyTodos.Application.csproj",
+        "packagesPath": "C:\\Users\\thush\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\thush\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Domain\\EasyTodos.Domain.csproj": {
+                "projectPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Domain\\EasyTodos.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0-preview.7.22376.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.309\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Domain\\EasyTodos.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Domain\\EasyTodos.Domain.csproj",
+        "projectName": "EasyTodos.Domain",
+        "projectPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Domain\\EasyTodos.Domain.csproj",
+        "packagesPath": "C:\\Users\\thush\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\thush\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0-preview.7.22376.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[7.0.0-preview.7.22376.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.309\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Infrastructure\\EasyTodos.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Infrastructure\\EasyTodos.Infrastructure.csproj",
+        "projectName": "EasyTodos.Infrastructure",
+        "projectPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Infrastructure\\EasyTodos.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\thush\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\thush\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Application\\EasyTodos.Application.csproj": {
+                "projectPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Application\\EasyTodos.Application.csproj"
+              },
+              "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Domain\\EasyTodos.Domain.csproj": {
+                "projectPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Domain\\EasyTodos.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0-preview.7.22376.2, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.0-preview.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.309\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.WebAPI.UnitTests\\EasyTodos.WebAPI.UnitTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.WebAPI.UnitTests\\EasyTodos.WebAPI.UnitTests.csproj",
+        "projectName": "EasyTodos.WebAPI.UnitTests",
+        "projectPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.WebAPI.UnitTests\\EasyTodos.WebAPI.UnitTests.csproj",
+        "packagesPath": "C:\\Users\\thush\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.WebAPI.UnitTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\thush\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Domain\\EasyTodos.Domain.csproj": {
+                "projectPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Domain\\EasyTodos.Domain.csproj"
+              },
+              "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Infrastructure\\EasyTodos.Infrastructure.csproj": {
+                "projectPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Infrastructure\\EasyTodos.Infrastructure.csproj"
+              },
+              "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.WebAPI\\EasyTodos.WebAPI.csproj": {
+                "projectPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.WebAPI\\EasyTodos.WebAPI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0-preview.7.22376.2, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.309\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.WebAPI\\EasyTodos.WebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.WebAPI\\EasyTodos.WebAPI.csproj",
+        "projectName": "EasyTodos.WebAPI",
+        "projectPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.WebAPI\\EasyTodos.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\thush\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.WebAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\thush\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Application\\EasyTodos.Application.csproj": {
+                "projectPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Application\\EasyTodos.Application.csproj"
+              },
+              "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Domain\\EasyTodos.Domain.csproj": {
+                "projectPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Domain\\EasyTodos.Domain.csproj"
+              },
+              "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Infrastructure\\EasyTodos.Infrastructure.csproj": {
+                "projectPath": "C:\\Dev\\easy-todos\\EasyTodos.Backend\\EasyTodos.Infrastructure\\EasyTodos.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0-preview.7.22376.2, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.4.0-preview-20220726-02, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.2, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.3.0-alpha-net7.4, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.2-beta2, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.0-preview.6, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.309\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

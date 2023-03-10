@@ -1,49 +1,36 @@
-﻿using backend.Database;
-using backend.Models;
-using backend.Util;
+﻿using EasyTodos.Application.Users.Commands.CreateUser;
+using EasyTodos.Application.Users.Queries;
 using Microsoft.AspNetCore.Mvc;
 
-namespace backend.Controllers;
+namespace EasyTodos.WebAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
 public class UsersController : ControllerBase
 {
+    private readonly CreateUserCommandHandler _createUserCommandHandler;
+    private readonly GetUserByUsernameQuery _getUserByUsernameQuery;
     private readonly ILogger<UsersController> _logger;
-    private readonly DatabaseContext _db;
 
-    public UsersController(ILogger<UsersController> logger, DatabaseContext db)
+    public UsersController(ILogger<UsersController> logger, GetUserByUsernameQuery getUserByUsernameQuery,
+        CreateUserCommandHandler createUserCommandHandler)
     {
         _logger = logger;
-        _db = db;
+        _getUserByUsernameQuery = getUserByUsernameQuery;
+        _createUserCommandHandler = createUserCommandHandler;
     }
 
-    [HttpGet]
-    public IActionResult GetAll()
+    [HttpGet("{username:string}")]
+    public IActionResult GetByUsername(string username)
     {
-        var users = _db.Users.ToList();
-        return Ok(users);
-    }
-
-    [HttpGet("{id:int}")]
-    public IActionResult Get(int id)
-    {
-        var user = _db.Users.FirstOrDefault(u => u.Id == id);
-        if (user == null)
-        {
-            return NotFound();
-        }
-        
+        var user = _getUserByUsernameQuery.Handle(username);
         return Ok(user);
     }
 
     [HttpPost]
-    public IActionResult Create([FromBody]NewUser newUser)
+    public IActionResult Create([FromBody] CreateUserCommand newUser)
     {
-        var user = EntityMapper.Map(newUser);
-        _db.Users.Add(user);
-        _db.SaveChanges();
-
-        return CreatedAtAction(nameof(Create), new { id = user.Id }, user);
+        var userId = _createUserCommandHandler.Handle(newUser);
+        return CreatedAtAction(nameof(Create), new { id = userId });
     }
 }

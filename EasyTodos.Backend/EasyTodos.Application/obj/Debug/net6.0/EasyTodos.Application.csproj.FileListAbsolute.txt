@@ -1,0 +1,15 @@
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Application\bin\Debug\net6.0\EasyTodos.Application.deps.json
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Application\bin\Debug\net6.0\EasyTodos.Application.dll
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Application\bin\Debug\net6.0\EasyTodos.Application.pdb
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Application\bin\Debug\net6.0\EasyTodos.Domain.dll
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Application\bin\Debug\net6.0\EasyTodos.Domain.pdb
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Application\obj\Debug\net6.0\EasyTodos.Application.csproj.AssemblyReference.cache
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Application\obj\Debug\net6.0\EasyTodos.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Application\obj\Debug\net6.0\EasyTodos.Application.AssemblyInfoInputs.cache
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Application\obj\Debug\net6.0\EasyTodos.Application.AssemblyInfo.cs
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Application\obj\Debug\net6.0\EasyTodos.Application.csproj.CoreCompileInputs.cache
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Application\obj\Debug\net6.0\EasyTodos.Application.csproj.CopyComplete
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Application\obj\Debug\net6.0\EasyTodos.Application.dll
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Application\obj\Debug\net6.0\refint\EasyTodos.Application.dll
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Application\obj\Debug\net6.0\EasyTodos.Application.pdb
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Application\obj\Debug\net6.0\ref\EasyTodos.Application.dll

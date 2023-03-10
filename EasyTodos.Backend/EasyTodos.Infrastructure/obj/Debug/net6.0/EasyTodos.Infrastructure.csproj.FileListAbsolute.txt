@@ -1,0 +1,17 @@
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Infrastructure\bin\Debug\net6.0\EasyTodos.Infrastructure.deps.json
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Infrastructure\bin\Debug\net6.0\EasyTodos.Infrastructure.dll
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Infrastructure\bin\Debug\net6.0\EasyTodos.Infrastructure.pdb
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Infrastructure\bin\Debug\net6.0\EasyTodos.Application.dll
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Infrastructure\bin\Debug\net6.0\EasyTodos.Domain.dll
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Infrastructure\bin\Debug\net6.0\EasyTodos.Application.pdb
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Infrastructure\bin\Debug\net6.0\EasyTodos.Domain.pdb
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Infrastructure\obj\Debug\net6.0\EasyTodos.Infrastructure.csproj.AssemblyReference.cache
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Infrastructure\obj\Debug\net6.0\EasyTodos.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Infrastructure\obj\Debug\net6.0\EasyTodos.Infrastructure.AssemblyInfoInputs.cache
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Infrastructure\obj\Debug\net6.0\EasyTodos.Infrastructure.AssemblyInfo.cs
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Infrastructure\obj\Debug\net6.0\EasyTodos.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Infrastructure\obj\Debug\net6.0\EasyTodos.Infrastructure.csproj.CopyComplete
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Infrastructure\obj\Debug\net6.0\EasyTodos.Infrastructure.dll
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Infrastructure\obj\Debug\net6.0\refint\EasyTodos.Infrastructure.dll
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Infrastructure\obj\Debug\net6.0\EasyTodos.Infrastructure.pdb
+C:\Dev\easy-todos\EasyTodos.Backend\EasyTodos.Infrastructure\obj\Debug\net6.0\ref\EasyTodos.Infrastructure.dll

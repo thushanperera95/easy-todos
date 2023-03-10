@@ -1,5 +1,5 @@
-using backend.Database;
-using Microsoft.EntityFrameworkCore;
+using EasyTodos.Application;
+using EasyTodos.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,11 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
-builder.Services.AddDbContext<DatabaseContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DBConnection") ?? string.Empty));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddApplicationServices();
+builder.Services.AddInfrastructureServices(builder.Configuration);
 
 var app = builder.Build();
 
